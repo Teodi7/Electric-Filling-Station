@@ -5,44 +5,31 @@ import java.util.List;
 
 public class ClientAccountManager {
 
-    private List<Client> clients = new ArrayList<>();
     private List<ClientAccount> accounts = new ArrayList<>();
 
-    public ClientAccount createClientAccount(Client client) {
-        ClientAccount account = new ClientAccount(client.getClientId(), "ACTIVE", 0.0);
-        clients.add(client);
+    public ClientAccount createClientAccount(int id, String name, String email) {
+        ClientAccount account = new ClientAccount(id, name, email);
         accounts.add(account);
         return account;
     }
 
-    public void updateClientAccount(ClientAccount account) {
-
-    }
-
-    public void deleteClientAccount(int accountId) {
-        accounts.removeIf(account -> account.getAccountId() == accountId);
-    }
-
-    public ClientAccount getAccountByClientId(int clientId) {
-        for (ClientAccount account : accounts) {
-            if (account.getAccountId() == clientId) {
-                return account;
+    public ClientAccount getAccountByClientId(int id) {
+        for (ClientAccount acc : accounts) {
+            if (acc.getAccountId() == id) {
+                return acc;
             }
         }
         return null;
     }
 
-    public void topUpBalance(int accountId, double amount) {
-        ClientAccount account = getAccountByClientId(accountId);
-        if (account != null) {
-            account.credit(amount);
+    public void topUpBalance(int clientId, double amount) {
+        ClientAccount acc = getAccountByClientId(clientId);
+        if (acc != null) {
+            acc.credit(amount);
         }
     }
 
-    public void withdrawBalance(int accountId, double amount) {
-        ClientAccount account = getAccountByClientId(accountId);
-        if (account != null) {
-            account.debit(amount);
-        }
+    public List<ClientAccount> getAllAccounts() {
+        return accounts;
     }
 }

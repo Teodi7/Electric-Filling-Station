@@ -2,58 +2,50 @@ package org.example;
 
 public class ClientAccount {
 
-    private int accountId;
-    private String status; // "ACTIVE", "BLOCKED"
-    private double balance;
+    private int accountId;     // ersetzt clientId
+    private String name;
+    private String email;
+    private String status = "ACTIVE";
+    private double balance = 0.0;
 
-    public ClientAccount(int accountId, String status, double balance) {
+    public ClientAccount(int accountId, String name, String email) {
         this.accountId = accountId;
-        this.status = status;
-        this.balance = balance;
+        this.name = name;
+        this.email = email;
     }
 
-    public ClientAccount() {
-    }
-
-
-    public void credit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
-    }
-
-    public void debit(double amount) {
-        if (amount > 0 && canPay(amount)) {
-            balance -= amount;
-        }
-    }
-
-    public boolean canPay(double amount) {
-        return amount >= 0 && balance >= amount && "ACTIVE".equalsIgnoreCase(status);
-    }
-
+    public ClientAccount() {}
 
     public int getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void credit(double amount) {
+        this.balance += amount;
+    }
+
+    public void debit(double amount) {
+        this.balance -= amount;
+    }
+
+    public void updateContactData(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 }
