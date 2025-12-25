@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ChargerSteps {
 
     private LocationManager locationManager = new LocationManager();
@@ -25,7 +27,7 @@ public class ChargerSteps {
         chargerManager.createCharger(chargerId, chargerType, chargerStatus, 22.0, loc);
 
         //loc überhaupt vorhanden?
-        Assertions.assertNotNull(loc, "Location should not be null");
+        assertNotNull(loc, "Location should not be null");
     }
 
     @When("the owner requests the chargers for location with id {int}")
@@ -37,6 +39,46 @@ public class ChargerSteps {
 
     @Then("the system should return {int} chargers for location with id {int}")
     public void theSystemShouldReturnChargers(int expected, int locationId) {
-        Assertions.assertEquals(expected, result.size());
+        assertEquals(expected, result.size());
     }
+
+    //update charger
+    @When("the owner updates the charger with id {int} to status {string}")
+    public void the_owner_updates_the_charger_with_id_to_status(Integer chargerId, String statusText) {
+
+        Charger charger = chargerManager.findChargerById(chargerId);
+
+        // Falls Charger existiert muss ich Status setzen
+        if (charger != null) {
+            charger.setStatus(ChargerStatus.valueOf(statusText));
+        }
+    }
+
+    @Then("the system should show a charger with id {int} having status {string}")
+    public void the_system_should_show_a_charger_with_id_having_status(Integer chargerId, String expectedStatus) {
+
+        Charger charger = chargerManager.findChargerById(chargerId);
+
+
+        assertNotNull(charger);
+        assertEquals(ChargerStatus.valueOf(expectedStatus), charger.getStatus());
+    }
+
+        //delete charger
+    @When("the owner deletes the charger with id {int}")
+    public void the_owner_deletes_the_charger_with_id(Integer chargerId) {
+        chargerManager.deleteCharger(chargerId);
+    }
+
+
+    @Then("the system should not contain a charger with id {int} for location with id {int}")
+    public void the_system_should_not_contain_a_charger_with_id_for_location_with_id(Integer chargerId, Integer locationId) {
+
+        Charger charger = chargerManager.findChargerById(chargerId);
+
+
+        assertNull(charger);
+    }
+
+
 }

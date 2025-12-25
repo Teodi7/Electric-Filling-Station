@@ -75,4 +75,23 @@ public class LocationSteps {
     public void system_should_return_locations(Integer expectedCount) {
         Assertions.assertEquals(expectedCount.intValue(), returnedLocations.size());
     }
+
+    // Scenario 3
+    @When("the owner updates the location with id {int} to name {string}, address {string} and status {string}")
+    public void the_owner_updates_the_location_with_id(Integer id, String newName, String newAddress, String newStatus) {
+        locationManager.updateLocation(id, newName, newAddress, newStatus);
+        createdLocation = locationManager.findLocationById(id);
+    }
+
+    //Scenario 4
+    @When("the owner deletes the location with id {int}")
+    public void the_owner_deletes_the_location_with_id(Integer id) {
+        locationManager.deleteLocation(id);
+    }
+
+    @Then("the system should not contain a location with id {int}")
+    public void the_system_should_not_contain_a_location_with_id(Integer id) {
+        Location found = locationManager.findLocationById(id);
+        Assertions.assertNull(found, "Expected no location with id " + id + " but one was found.");
+    }
 }

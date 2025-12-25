@@ -13,9 +13,7 @@ public class ManageChargingPointsSteps {
 
     private List<Charger> lastResultChargers = new ArrayList<>();
 
-    // -------------------------------------------------------------
-    // GIVEN – Location exists
-    // -------------------------------------------------------------
+
 
     @Given("there is a location with id {int}, name {string}, address {string} and status {string}")
     public void there_is_a_location_with_id_name_address_status(
@@ -24,9 +22,7 @@ public class ManageChargingPointsSteps {
         locationManager.createLocation(id, name, address, status);
     }
 
-    // -------------------------------------------------------------
-    // WHEN – Owner creates charger
-    // -------------------------------------------------------------
+
 
     @When("the owner creates a charger with id {int}, type {string} and status {string} for location with id {int}")
     public void owner_creates_charger_for_location(
@@ -41,9 +37,7 @@ public class ManageChargingPointsSteps {
         chargerManager.createCharger(chargerId, chargerType, chargerStatus, 22.0, loc);
     }
 
-    // -------------------------------------------------------------
-    // THEN – System shows count
-    // -------------------------------------------------------------
+
 
     @Then("the system should show {int} charger for location with id {int}")
     public void system_should_show_charger_count(Integer expectedCount, Integer locationId) {
@@ -54,10 +48,6 @@ public class ManageChargingPointsSteps {
         List<Charger> chargers = chargerManager.getChargersByLocation(loc);
         Assertions.assertEquals(expectedCount.intValue(), chargers.size());
     }
-
-    // -------------------------------------------------------------
-    // WHEN – Owner requests list of chargers (do NOT duplicate)
-    // -------------------------------------------------------------
 
 
 

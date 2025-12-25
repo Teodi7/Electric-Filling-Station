@@ -4,27 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="Business-Object und Management">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargerSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientTopUpSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ClientAccounts.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" afterDir="false" />
+    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="IA6">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BalanceInquiryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargeEVSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/InvoiceSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ReadPricesSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ViewBalanceSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Charge-EV.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/ClientInvoice.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Read-Prices.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Update-prices.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/View-Balance.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Charger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Charger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargingSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargingSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargingSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargingSessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientAccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientAccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ElectricChargingStationNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ElectricChargingStationNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChargerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargerSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientTopUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientTopUpSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-ClientAccounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ClientAccounts.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +53,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -70,10 +88,16 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Client-AccountManagement.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Client-TopUpAccount.executor&quot;: &quot;Run&quot;,
     &quot;Cucumber Java.Feature: Manage-ChargingPoints.executor&quot;: &quot;Run&quot;,
     &quot;Cucumber Java.Feature: Manage-Locations.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Owner creates a charger for a location.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Owner updates the prices for a location.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Owner views chargers of a location.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.All in Electric-Filling-Station.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.features in Electric-Filling-Station.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.org.example in Electric-Filling-Station.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -96,7 +120,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Electric-Filling-Station">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Electric-Filling-Station" />
@@ -110,52 +134,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: Client-AccountManagement" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" />
-      <option name="GLUE" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Electric-Filling-Station" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Client-AccountManagement" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: Client-TopUpAccount" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" />
-      <option name="GLUE" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Electric-Filling-Station" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Client-TopUpAccount" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: Manage-ChargingPoints" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Owner creates a charger for a location" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" />
       <option name="GLUE" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Electric-Filling-Station" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Manage-ChargingPoints" />
+      <option name="NAME_FILTER" value="^Owner creates a charger for a location$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Owner creates a charger for a location$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Owner creates a charger for a location" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Owner updates the prices for a location" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Update-prices.feature" />
+      <option name="GLUE" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Electric-Filling-Station" />
+      <option name="NAME_FILTER" value="^Owner updates the prices for a location$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Owner updates the prices for a location$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Owner updates the prices for a location" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Owner views chargers of a location" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" />
+      <option name="GLUE" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Electric-Filling-Station" />
+      <option name="NAME_FILTER" value="^Owner views chargers of a location$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Owner views chargers of a location$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Owner views chargers of a location" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -177,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Electric-Filling-Station" />
-        <item itemvalue="Cucumber Java.Feature: Client-TopUpAccount" />
-        <item itemvalue="Cucumber Java.Feature: Client-AccountManagement" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Cucumber Java.Feature: Manage-ChargingPoints" />
+        <item itemvalue="Cucumber Java.Scenario: Owner updates the prices for a location" />
+        <item itemvalue="Cucumber Java.Scenario: Owner creates a charger for a location" />
+        <item itemvalue="Cucumber Java.Scenario: Owner views chargers of a location" />
+        <item itemvalue="JUnit.All in Electric-Filling-Station" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +239,12 @@
       <workItem from="1763566515858" duration="440000" />
       <workItem from="1764672800610" duration="3779000" />
       <workItem from="1764677012955" duration="5000" />
-      <workItem from="1764693157418" duration="1373000" />
+      <workItem from="1764693157418" duration="14438000" />
+      <workItem from="1764790700607" duration="2503000" />
+      <workItem from="1764848517997" duration="5107000" />
+      <workItem from="1764854220425" duration="1371000" />
+      <workItem from="1765311286451" duration="2626000" />
+      <workItem from="1765362445266" duration="5185000" />
     </task>
     <task id="LOCAL-00001" summary="Business-Object und Management">
       <option name="closed" value="true" />
@@ -222,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763126672428</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IA6">
+      <option name="closed" value="true" />
+      <created>1764696974339</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764696974339</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +281,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Business-Object und Management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Business-Object und Management" />
+    <MESSAGE value="IA6" />
+    <option name="LAST_COMMIT_MESSAGE" value="IA6" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/REQEP$org_example_in_Electric_Filling_Station.ic" NAME="org.example in Electric-Filling-Station Coverage Results" MODIFIED="1764791391918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
   </component>
 </project>

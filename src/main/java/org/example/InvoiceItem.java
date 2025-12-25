@@ -1,5 +1,9 @@
 package org.example;
 
+
+ // Für die einzelne Rechnung
+
+
 public class InvoiceItem {
 
     private int itemId;
@@ -15,12 +19,6 @@ public class InvoiceItem {
     public InvoiceItem() {
     }
 
-    public double getAmount() {
-        return amount;
-    }
-
-
-
     public int getItemId() {
         return itemId;
     }
@@ -35,6 +33,10 @@ public class InvoiceItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public double getAmount() {
+        return amount;
     }
 
     public void setAmount(double amount) {

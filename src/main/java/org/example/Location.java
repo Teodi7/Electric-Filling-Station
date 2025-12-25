@@ -3,6 +3,8 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+// fürLade-Standort.
+
 public class Location {
 
     private int locationId;
@@ -18,11 +20,11 @@ public class Location {
         this.status = status;
     }
 
+
     public Location() {
     }
 
-
-
+    // Charger-Verwaltung  E2 / E7
     public void addCharger(Charger charger) {
         if (charger != null && !chargers.contains(charger)) {
             chargers.add(charger);
@@ -43,8 +45,7 @@ public class Location {
         return available;
     }
 
-
-
+    // Getter/Setter
     public int getLocationId() {
         return locationId;
     }

@@ -1,24 +1,31 @@
 package org.example;
 
+
 public class ClientAccount {
 
-    private int accountId;     // ersetzt clientId
+    // clientId ist auch die Account-ID
+    private int clientId;
     private String name;
     private String email;
-    private String status = "ACTIVE";
     private double balance = 0.0;
 
-    public ClientAccount(int accountId, String name, String email) {
-        this.accountId = accountId;
+    // US5.1 – Create Client Account
+    public ClientAccount(int clientId, String name, String email) {
+        this.clientId = clientId;
         this.name = name;
         this.email = email;
     }
 
-    public ClientAccount() {}
+
+    public int getClientId() {
+        return clientId;
+    }
 
     public int getAccountId() {
-        return accountId;
+        return clientId;
     }
+
+
 
     public String getName() {
         return name;
@@ -28,24 +35,35 @@ public class ClientAccount {
         return email;
     }
 
-    public String getStatus() {
-        return status;
+    // US4.2 / US5.2 – Update Client Account
+    public void updateContactData(String newName, String newEmail) {
+        this.name = newName;
+        this.email = newEmail;
     }
+
+    // Ganze Guthaben
 
     public double getBalance() {
         return balance;
     }
 
-    public void credit(double amount) {
-        this.balance += amount;
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
+
+    // US6.2 – Top-Up Balance
+    public void credit(double amount) {
+        balance += amount;
+    }
+
+    // US6.1 / US6.3 / US8.1 – Prüfung,
+    public boolean canPay(double amount) {
+        return balance >= amount;
+    }
+
 
     public void debit(double amount) {
-        this.balance -= amount;
-    }
-
-    public void updateContactData(String name, String email) {
-        this.name = name;
-        this.email = email;
+        balance -= amount;
     }
 }

@@ -4,6 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// E9 – Review History
+// US9.1 – View Invoice Items
+
 public class Invoice {
 
     private int invoiceId;
@@ -11,16 +15,22 @@ public class Invoice {
     private double totalAmount;
     private List<InvoiceItem> items = new ArrayList<>();
 
-    public Invoice(int invoiceId, LocalDate issueDate) {
+
+    private ClientAccount account;
+
+
+    public Invoice(int invoiceId, LocalDate issueDate, ClientAccount account) {
         this.invoiceId = invoiceId;
         this.issueDate = issueDate;
+        this.account = account;
     }
+
 
     public Invoice() {
         this.issueDate = LocalDate.now();
     }
 
-
+    //  US9.1 – Invoice Items hinzufügen / Gesamtbetrag berechnen ---
 
     public void addItem(InvoiceItem item) {
         if (item != null) {
@@ -38,7 +48,7 @@ public class Invoice {
         return totalAmount;
     }
 
-
+    // Getter / Setter
 
     public int getInvoiceId() {
         return invoiceId;
@@ -65,7 +75,27 @@ public class Invoice {
     }
 
     public void setItems(List<InvoiceItem> items) {
-        this.items = items;
+        this.items = items != null ? items : new ArrayList<>();
         calculateTotal();
+    }
+
+    public ClientAccount getAccount() {
+        return account;
+    }
+
+    public void setAccount(ClientAccount account) {
+        this.account = account;
+    }
+
+
+
+    // Für Main, damit es funktioniert
+    public LocalDate getDate() {
+        return issueDate;
+    }
+
+    // ebenfalls für meine Main
+    public double getAmount() {
+        return totalAmount;
     }
 }

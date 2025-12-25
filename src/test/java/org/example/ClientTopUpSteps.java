@@ -24,7 +24,7 @@ public class ClientTopUpSteps {
         clientAccountManager.topUpBalance(account.getAccountId(), amount);
     }
 
-    @Then("the account balance should be {double}")
+    @Then("the topped up account balance should be {double}")
     public void the_account_balance_should_be(Double expectedBalance) {
         ClientAccount refreshed =
                 clientAccountManager.getAccountByClientId(account.getAccountId());

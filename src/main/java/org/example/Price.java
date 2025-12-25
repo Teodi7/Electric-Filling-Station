@@ -1,56 +1,55 @@
 package org.example;
 
+
+ //Preis für einen bestimmten Standort und einen bestimmten Charger-Typ.
+
 public class Price {
 
-    private int priceId;
+    private Location location;
     private ChargerType chargerType;
-    private double pricePerKWh;
-    private double pricePerMinute;
+    private double pricePerKwh;
+    private double pricePerMinute;   // Preis pro Minute
 
-    public Price(int priceId, ChargerType chargerType, double pricePerKWh, double pricePerMinute) {
-        this.priceId = priceId;
+    // Preis pro kWh und pro Minute
+    public Price(Location location, ChargerType chargerType,
+                 double pricePerKwh, double pricePerMinute) {
+        this.location = location;
         this.chargerType = chargerType;
-        this.pricePerKWh = pricePerKWh;
+        this.pricePerKwh = pricePerKwh;
         this.pricePerMinute = pricePerMinute;
     }
 
-    public Price() {
+    // Minutenpreis = 0
+    public Price(Location location, ChargerType chargerType, double pricePerKwh) {
+        this(location, chargerType, pricePerKwh, 0.0);
     }
 
-
-
-    public double calculateCost(double kWh, double minutes) {
-        return kWh * pricePerKWh + minutes * pricePerMinute;
+    // US8.1 – Charge EV
+    // Kosten für einen Ladevorgang
+    public double calculateCost(double energyKWh, double minutes) {
+        double costEnergy = energyKWh * pricePerKwh;
+        double costTime = minutes * pricePerMinute;
+        return costEnergy + costTime;
     }
 
-
-
-    public int getPriceId() {
-        return priceId;
-    }
-
-    public void setPriceId(int priceId) {
-        this.priceId = priceId;
+    public Location getLocation() {
+        return location;
     }
 
     public ChargerType getChargerType() {
         return chargerType;
     }
 
-    public void setChargerType(ChargerType chargerType) {
-        this.chargerType = chargerType;
-    }
-
-    public double getPricePerKWh() {
-        return pricePerKWh;
-    }
-
-    public void setPricePerKWh(double pricePerKWh) {
-        this.pricePerKWh = pricePerKWh;
+    public double getPricePerKwh() {
+        return pricePerKwh;
     }
 
     public double getPricePerMinute() {
         return pricePerMinute;
+    }
+
+    public void setPricePerKwh(double pricePerKwh) {
+        this.pricePerKwh = pricePerKwh;
     }
 
     public void setPricePerMinute(double pricePerMinute) {
