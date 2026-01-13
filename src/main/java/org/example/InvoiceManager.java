@@ -20,7 +20,7 @@ public class InvoiceManager {
             return null;
         }
 
-        // Guthaben abbuchen (direkt, passend zu deiner Klasse)
+        // Guthaben abbuchen
         client.withdraw(total);
 
         // Invoice mit Zeit + AC/DC erzeugen

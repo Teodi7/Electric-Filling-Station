@@ -13,7 +13,7 @@ public class ManageChargingPointsSteps {
     public void the_owner_adds_a_charger_with_id_of_type_ac_to_location(Integer id, String locationName) {
         Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
 
-        // Edge case: Location existiert nicht -> nichts machen (System bleibt unverändert)
+        // Edge case: Location existiert nicht, das System soll unverändert bleiben
         if (location == null) {
             return;
         }
@@ -28,7 +28,7 @@ public class ManageChargingPointsSteps {
     public void the_owner_adds_a_charger_with_id_of_type_dc_to_location(Integer id, String locationName) {
         Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
 
-        // Edge case: Location existiert nicht -> nichts machen (System bleibt unverändert)
+        // Edge case: Location existiert nicht, System soll gleich bleiben
         if (location == null) {
             return;
         }

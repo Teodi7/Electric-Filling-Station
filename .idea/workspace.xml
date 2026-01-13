@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="FA9">
+    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="FA9-final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BalanceInquiryManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Price.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChargeEVSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargeEVSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ViewBalanceSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ViewBalanceSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientInvoiceSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientInvoiceSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/StepDefinitions.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +105,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.All Features in: test">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Electric-Filling-Station" />
@@ -183,10 +182,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.All Features in: test" />
-        <item itemvalue="JUnit.All in Electric-Filling-Station" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.org.example in Electric-Filling-Station" />
+        <item itemvalue="JUnit.All in Electric-Filling-Station" />
+        <item itemvalue="Cucumber Java.All Features in: test" />
         <item itemvalue="Cucumber Java.Scenario: Owner updates the prices for a location" />
       </list>
     </recent_temporary>
@@ -232,7 +231,8 @@
       <workItem from="1768302570130" duration="4944000" />
       <workItem from="1768308457385" duration="135000" />
       <workItem from="1768308957999" duration="1986000" />
-      <workItem from="1768310961053" duration="13190000" />
+      <workItem from="1768310961053" duration="13833000" />
+      <workItem from="1768332003013" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="Business-Object und Management">
       <option name="closed" value="true" />
@@ -266,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768315173242</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FA9-final version">
+      <option name="closed" value="true" />
+      <created>1768325337716</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768325337716</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +296,8 @@
     <MESSAGE value="IA6" />
     <MESSAGE value="IA7-letzte Aufgabe" />
     <MESSAGE value="FA9" />
-    <option name="LAST_COMMIT_MESSAGE" value="FA9" />
+    <MESSAGE value="FA9-final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="FA9-final version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/REQEP$org_example_in_Electric_Filling_Station.ic" NAME="org.example in Electric-Filling-Station Coverage Results" MODIFIED="1764791391918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

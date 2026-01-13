@@ -11,7 +11,7 @@ Feature: Manage charging locations
 
   Scenario: View all charging locations
     Given the following locations exist:
-      | id |          name               | address                |
+      | id | name                        | address                |
       | 1  | FH-Technikum                | Höchstädtplatz 6       |
       | 2  | Hauptbahnhof Wien           | Am Hauptbahnhof 1      |
       | 3  | Wien Floridsdorf            | Überfuhrstraße 3       |

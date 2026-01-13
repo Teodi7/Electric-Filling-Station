@@ -24,13 +24,13 @@ public class Main {
         System.out.println("E1 – Manage - Locations\n");
 
         // 10 Locations anlegen (dein LocationManager hat addLocation(..))
-        Location loc1  = new Location(1,  "FH Technikum Wien",          "Höchstädtplatz 6");
-        Location loc2  = new Location(2,  "Wien Westbahnhof",           "Mariahilfer Straße 100");
-        Location loc3  = new Location(3,  "Wien Floridsdorf",           "Überfuhrstraße 3");
-        Location loc4  = new Location(4,  "Wien Brigittenau",           "Briggittenauerlände 4");
-        Location loc5  = new Location(5,  "Wien Donaustadt",            "Tokiostraße 5");
-        Location loc6  = new Location(6,  "Wiener Gürtel",                     "Mariahilferstraße 6");
-        Location loc7  = new Location(7,  "Wien Floridsdorf_2",         "Wehnhartgasse 7");
+        Location loc1  = new Location(1,  "FH Technikum Wien ",          "Höchstädtplatz 6");
+        Location loc2  = new Location(2,  "Wien Westbahnhof  ",           "Mariahilfer Straße 100");
+        Location loc3  = new Location(3,  "Wien Floridsdorf  ",           "Überfuhrstraße 3");
+        Location loc4  = new Location(4,  "Wien Brigittenau  ",           "Briggittenauerlände 4");
+        Location loc5  = new Location(5,  "Wien Donaustadt   ",              "Tokiostraße 5");
+        Location loc6  = new Location(6,  "Wiener Gürtel     ",               "Mariahilferstraße 6");
+        Location loc7  = new Location(7,  "Wien Floridsdorf_2",          "Wehnhartgasse 7");
         Location loc8  = new Location(8,  "Niederösterreich Korneuburg","Kapaunplatz 8");
         Location loc9  = new Location(9,  "Wien Brigittenau_2",         "Wexstraße 9");
         Location loc10 = new Location(10, "Wien Donaustadt_2",          "Kagranerplatz 10");
@@ -52,12 +52,13 @@ public class Main {
         }
         System.out.println();
 
-        // Delete Location (Manager hat kein delete -> wir entfernen direkt aus der Liste)
-        System.out.println("Delete Location ID 2 (direkt aus getAllLocations entfernen):");
+        // Delete Location
+        System.out.println("Delete Location ID 2:");
         Location toDelete = locationManager.getLocationById(2);
         if (toDelete != null) {
             locationManager.getAllLocations().remove(toDelete);
             System.out.println("Location 2 entfernt.");
+            System.out.println();
         }
         System.out.println("Locations nach Löschen von ID 2:");
         for (Location l : locationManager.getAllLocations()) {
@@ -152,7 +153,7 @@ public class Main {
             chargerManager.addCharger(dcCharger);
         }
 
-        System.out.println("Charger an Location FH Technikum Wien (VOR Update):");
+        System.out.println("Charger an Location FH Technikum Wien - Garage nach hinzufügen (VOR Update):");
         for (Charger c : chargerManager.getChargersByLocation(loc1)) {
             System.out.println(c.getId() + " | " + c.getType() + " | " + c.getStatus());
         }
@@ -160,7 +161,7 @@ public class Main {
 
 
 
-        System.out.println("UPDATE: AC Charger an FH Technikum Wien -> OCCUPIED");
+        System.out.println("UPDATE: AC Charger an FH Technikum Wien - Garage -> OCCUPIED");
 
         // einen AC-Charger an loc1 holen
         Charger occupiedCharger = chargerManager.getChargersByLocation(loc1)
@@ -194,7 +195,7 @@ public class Main {
         priceManager.setPrice(loc1, ChargerType.AC, 0.25);
         priceManager.setPrice(loc1, ChargerType.DC, 0.40);
 
-        System.out.println("Preise für Location FH Technikum Wien:");
+        System.out.println("Preise für Location FH Technikum Wien - Garage:");
         List<Price> pricesAtLoc1 = priceManager.getPricesForLocation(loc1);
         DateTimeFormatter formatter =
                 DateTimeFormatter.ofPattern("dd.MM.yyyy     HH:mm:ss");
@@ -256,7 +257,7 @@ public class Main {
         sessionManager.stopCharging(ch100);
         System.out.println("Charging gestoppt. Charger 100 Status: " + ch100.getStatus());
 
-        // Rechnung erstellen + Client belasten (macht InvoiceManager bei dir automatisch)
+        // Rechnung erstellen + Client belasten (InvoiceManager)
         Price priceToUse = priceManager.getLatestPrice(loc1, ch100.getType());
         Invoice invoice = invoiceManager.createInvoice(client, loc1, session.getEnergyKwh(), priceToUse);
 

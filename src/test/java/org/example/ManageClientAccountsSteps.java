@@ -7,7 +7,7 @@ public class ManageClientAccountsSteps {
 
     @When("the owner requests all client accounts")
     public void the_owner_requests_all_client_accounts() {
-        // checked in assertion
+        // checke ich in assertions
     }
 
     @Then("the system should return {int} client accounts")
@@ -20,7 +20,7 @@ public class ManageClientAccountsSteps {
         ClientAccountManager manager = LocationSteps.getNetwork().getClientAccountManager();
         ClientAccount client = manager.getClientById(id);
 
-        // Edge case: client does not exist -> do nothing
+        // Edge case: client existiert nicht, dann passiert nichts
         if (client == null) {
             return;
         }

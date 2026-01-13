@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class ClientInvoiceSteps {
 
-    // @Then("no invoice should exist") hier eingefügt und bei ChargeEVSteps entfernt
 
     @Then("an invoice should exist with:")
     public void an_invoice_should_exist_with(DataTable table) {
@@ -36,7 +35,7 @@ public class ClientInvoiceSteps {
         );
     }
 
-    // ✅ EDGE CASE
+    // edge case
     @Then("no invoice should exist")
     public void no_invoice_should_exist() {
         Assertions.assertNull(

@@ -44,13 +44,13 @@ public class ChargeEVSteps {
             return;
         }
 
-        // Client holen (bei dir immer Client ID = 1)
+        // Client holen fängt bei mir immer mit id 1
         ClientAccount client = network.getClientAccountManager().getClientById(1);
         if (client == null) {
             return;
         }
 
-        // WICHTIG: Latest Price mit Uhrzeit + ChargerType
+        // Latest Price mit Uhrzeit + ChargerType
         Price latestPrice = network.getPriceManager()
                 .getLatestPrice(location, charger.getType());
 
