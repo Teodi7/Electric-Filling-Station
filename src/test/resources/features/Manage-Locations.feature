@@ -11,11 +11,20 @@ Feature: Manage charging locations
 
   Scenario: View all charging locations
     Given the following locations exist:
-      | id | name              | address              |
-      | 1  | FH-Technikum      | Höchstädtplatz 6     |
-      | 2  | Hauptbahnhof Wien | Am Hauptbahnhof 1    |
+      | id |          name               | address                |
+      | 1  | FH-Technikum                | Höchstädtplatz 6       |
+      | 2  | Hauptbahnhof Wien           | Am Hauptbahnhof 1      |
+      | 3  | Wien Floridsdorf            | Überfuhrstraße 3       |
+      | 3  | Wien Brigittenau            | Briggittenauerlände 4  |
+      | 5  | Wien Donaustadt             | Tokiostraße 5          |
+      | 6  | Wiener Gürtel               | Mariahilferstraße 6    |
+      | 7  | Wien Floridsdorf_2          | Wehnhartgasse 7        |
+      | 8  | Niederösterreich Korneuburg | Kapaunplatz 8          |
+      | 9  | Wien Brigittenau_2          | Wexstraße 9            |
+      | 10 | Wien Donaustadt_2           | Kagranerplatz 10       |
+
     When the owner requests all locations
-    Then the system should return 2 locations
+    Then the system should return 10 locations
 
   Scenario: Update a charging location
     Given a location with id 1, name "FH-Technikum", address "Höchstädtplatz 6" exists

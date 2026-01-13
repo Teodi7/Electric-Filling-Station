@@ -1,7 +1,7 @@
-Feature: Manage charging points
+Feature: Manage charger
   Chargers belong to a location and have a technical status.
 
-  Scenario: Create charging points for a location
+  Scenario: Create charger for a location
     Given a location with name "FH-Technikum" exists
     When the owner adds a charger with id 100 of type AC to location "FH-Technikum"
     And the owner adds a charger with id 101 of type DC to location "FH-Technikum"

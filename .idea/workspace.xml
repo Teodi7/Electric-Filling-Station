@@ -4,48 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="IA7-letzte Aufgabe">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TopUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientInvoiceSteps.java" afterDir="false" />
+    <list default="true" id="4a86b875-91b3-418f-8494-b2c9d521359d" name="Changes" comment="FA9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BalanceInquiryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BalanceInquiryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Charger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Charger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargingSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargingSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ChargingSessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ChargingSessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BalanceInquiryManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ClientAccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ClientAccountManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceItem.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InvoiceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LocationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Price.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PriceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChargeEVSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargeEVSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ChargerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ChargerSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountClientSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientAccountSteps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientTopUpSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientTopUpSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/InvoiceSteps.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/LocationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageChargingPointsSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ManageClientAccountsSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ReadPricesSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ReadPricesSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/RunCucumberTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ViewBalanceSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ViewBalanceSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Charge-EV.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Charge-EV.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Client-AccountManagement.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Client-TopUpAccount.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ClientInvoice.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ClientInvoice.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ChargingPoints.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-ClientAccounts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-ClientAccounts.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Manage-Locations.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Read-Prices.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Read-Prices.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Update-prices.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Update-prices.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/View-Balance.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/View-Balance.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org/example/example.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +106,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Electric-Filling-Station">
+  <component name="RunManager" selected="Cucumber Java.All Features in: test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Electric-Filling-Station" />
@@ -210,8 +183,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Electric-Filling-Station" />
         <item itemvalue="Cucumber Java.All Features in: test" />
+        <item itemvalue="JUnit.All in Electric-Filling-Station" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.org.example in Electric-Filling-Station" />
         <item itemvalue="Cucumber Java.Scenario: Owner updates the prices for a location" />
@@ -259,7 +232,7 @@
       <workItem from="1768302570130" duration="4944000" />
       <workItem from="1768308457385" duration="135000" />
       <workItem from="1768308957999" duration="1986000" />
-      <workItem from="1768310961053" duration="4157000" />
+      <workItem from="1768310961053" duration="13190000" />
     </task>
     <task id="LOCAL-00001" summary="Business-Object und Management">
       <option name="closed" value="true" />
@@ -285,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766689660365</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="FA9">
+      <option name="closed" value="true" />
+      <created>1768315173242</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768315173242</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +287,8 @@
     <MESSAGE value="Business-Object und Management" />
     <MESSAGE value="IA6" />
     <MESSAGE value="IA7-letzte Aufgabe" />
-    <option name="LAST_COMMIT_MESSAGE" value="IA7-letzte Aufgabe" />
+    <MESSAGE value="FA9" />
+    <option name="LAST_COMMIT_MESSAGE" value="FA9" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/REQEP$org_example_in_Electric_Filling_Station.ic" NAME="org.example in Electric-Filling-Station Coverage Results" MODIFIED="1764791391918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

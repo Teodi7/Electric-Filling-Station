@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class LocationSteps {
 
-    // Shared system for all step classes (reset before every scenario)
+    //  resetet bevor jedem scenario
     private static ElectricChargingStationNetwork network;
 
     public static ElectricChargingStationNetwork getNetwork() {
@@ -96,19 +96,18 @@ public class LocationSteps {
     public void the_owner_deletes_the_location_with_id(Integer id) {
         Location loc = LocationSteps.getNetwork().getLocationManager().getLocationById(id);
 
-        // Edge case: if location does not exist -> do nothing (system stays unchanged)
+        // fürEdge case
         if (loc != null) {
             LocationSteps.getNetwork().getLocationManager().getAllLocations().remove(loc);
         }
     }
-
 
     @Then("the system should not contain a location with id {int}")
     public void the_system_should_not_contain_a_location_with_id(Integer id) {
         Assertions.assertNull(network.getLocationManager().getLocationById(id));
     }
 
-    // Used in many features
+    // verwende ich in andere features
     @Given("a location with name {string} exists")
     public void a_location_with_name_exists(String name) {
         lastCreatedLocation = new Location(1, name, "Höchstädtplatz 6");

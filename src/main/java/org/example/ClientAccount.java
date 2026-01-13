@@ -20,6 +20,17 @@ public class ClientAccount {
         this.email = email;
         this.balance = 0.0;
     }
+    public boolean withdraw(double amount) {
+        if (amount <= 0) {
+            return false;
+        }
+        if (balance < amount) {
+            return false;
+        }
+        balance -= amount;
+        return true;
+    }
+
 
     public int getId() {
         return id;

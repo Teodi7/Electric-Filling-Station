@@ -1,5 +1,6 @@
 package org.example;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Main {
@@ -17,7 +18,7 @@ public class Main {
         ClientAccountManager clientManager = network.getClientAccountManager();
         ChargingSessionManager sessionManager = network.getChargingSessionManager();
         InvoiceManager invoiceManager = network.getInvoiceManager();
-        BalanceInquiryManager balanceManager = new BalanceInquiryManager();
+       // BalanceInquiryManager balanceManager = new BalanceInquiryManager();
 
         // ------------------------------------------------------------
         System.out.println("E1 – Manage - Locations\n");
@@ -64,29 +65,127 @@ public class Main {
         }
         System.out.println("\n");
 
+            // UPDATE Location
+        System.out.println("UPDATE: Location ID 1 aktualisieren:");
+        Location updateLoc = locationManager.getLocationById(1);
+        if (updateLoc != null) {
+            updateLoc.setName("FH Technikum Wien – Garage");
+            updateLoc.setAddress("Höchstädtplatz 6, Tiefgarage");
+            System.out.println("Location 1 wurde aktualisiert.");
+        }
+        System.out.println();
+
+    // READ ALL Locations (nach Update)
+        System.out.println("READ ALL: Alle Locations nach UPDATE:");
+        for (Location l : locationManager.getAllLocations()) {
+            System.out.println(l.getId() + " | " + l.getName() + " | " + l.getAddress());
+        }
+        System.out.println();
+
+        System.out.println();
+        System.out.println();
+
         // ------------------------------------------------------------
+
+        //TESTEN
         System.out.println("E2 – Manage - Chargers\n");
 
-        Charger ch100 = new Charger(100, ChargerType.AC, ChargerStatus.AVAILABLE, loc1);
-        Charger ch101 = new Charger(101, ChargerType.DC, ChargerStatus.OUT_OF_SERVICE, loc1);
+        int chargerIdCounter = 100;
 
-        chargerManager.addCharger(ch100);
-        chargerManager.addCharger(ch101);
+        for (Location loc : locationManager.getAllLocations()) {
 
-        System.out.println("Charger an Location 1:");
+            // AC Charger
+            Charger acCharger = new Charger(
+                    chargerIdCounter++,
+                    ChargerType.AC,
+                    ChargerStatus.AVAILABLE,
+                    loc
+            );
+            chargerManager.addCharger(acCharger);
+
+            // DC Charger
+            Charger dcCharger = new Charger(
+                    chargerIdCounter++,
+                    ChargerType.DC,
+                    ChargerStatus.AVAILABLE,
+                    loc
+            );
+            chargerManager.addCharger(dcCharger);
+        }
+
+
+        System.out.println("READ: Locations mit ihren Chargers & Status\n");
+
+        for (Location loc : locationManager.getAllLocations()) {
+            System.out.println("Location: " + loc.getName());
+
+            List<Charger> chargersAtLocation =
+                    chargerManager.getChargersByLocation(loc);
+
+            for (Charger c : chargersAtLocation) {
+                System.out.println(
+                        "  - Charger " + c.getId()
+                                + " | " + c.getType()
+                                + " | " + c.getStatus()
+                );
+            }
+            System.out.println();
+        }
+
+
+        for (Location loc : locationManager.getAllLocations()) {
+
+            Charger acCharger = new Charger(
+                    chargerIdCounter++,
+                    ChargerType.AC,
+                    ChargerStatus.AVAILABLE,
+                    loc
+            );
+            chargerManager.addCharger(acCharger);
+
+            Charger dcCharger = new Charger(
+                    chargerIdCounter++,
+                    ChargerType.DC,
+                    ChargerStatus.AVAILABLE,
+                    loc
+            );
+            chargerManager.addCharger(dcCharger);
+        }
+
+        System.out.println("Charger an Location FH Technikum Wien (VOR Update):");
         for (Charger c : chargerManager.getChargersByLocation(loc1)) {
             System.out.println(c.getId() + " | " + c.getType() + " | " + c.getStatus());
         }
         System.out.println();
 
-        // Update Charger Status (bei dir über setStatus / sessionManager oder direkt)
-        System.out.println("Charger 101 Status-Update -> AVAILABLE:");
-        Charger charger101 = chargerManager.getChargerById(101);
-        if (charger101 != null) {
-            charger101.setStatus(ChargerStatus.AVAILABLE);
-            System.out.println(charger101.getId() + " | " + charger101.getStatus());
+
+
+        System.out.println("UPDATE: AC Charger an FH Technikum Wien -> OCCUPIED");
+
+        // einen AC-Charger an loc1 holen
+        Charger occupiedCharger = chargerManager.getChargersByLocation(loc1)
+                .stream()
+                .filter(c -> c.getType() == ChargerType.AC)
+                .findFirst()
+                .orElse(null);
+
+        if (occupiedCharger != null) {
+            occupiedCharger.setStatus(ChargerStatus.OCCUPIED);
         }
-        System.out.println("\n");
+        System.out.println();
+
+
+        System.out.println("Charger an Location FH Technikum Wien (NACH Update):");
+        for (Charger c : chargerManager.getChargersByLocation(loc1)) {
+            System.out.println(c.getId() + " | " + c.getType() + " | " + c.getStatus());
+        }
+        System.out.println();
+
+
+
+
+
+
 
         // ------------------------------------------------------------
         System.out.println("E3 – Manage - Prices\n");
@@ -97,8 +196,15 @@ public class Main {
 
         System.out.println("Preise für Location FH Technikum Wien:");
         List<Price> pricesAtLoc1 = priceManager.getPricesForLocation(loc1);
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("dd.MM.yyyy     HH:mm:ss");
         for (Price p : pricesAtLoc1) {
-            System.out.println("Type " + p.getChargerType() + " | kWh=" + p.getPricePerKwh() + " | date=" + p.getDate());
+            System.out.println(
+                    "Type " + p.getChargerType()
+                            + " | kWh=" + p.getPricePerKwh()
+                            + " | date=" + p.getTimestamp().format(formatter)
+            );
+
         }
         System.out.println();
 
@@ -107,7 +213,11 @@ public class Main {
         priceManager.updatePrice(loc1, ChargerType.AC, 0.30);
 
         Price latestAC = priceManager.getLatestPrice(loc1, ChargerType.AC);
-        System.out.println("Latest AC Price: kWh=" + latestAC.getPricePerKwh() + " | date=" + latestAC.getDate());
+        System.out.println(
+                "Latest AC Price: kWh=" + latestAC.getPricePerKwh()
+                        + " | date=" + latestAC.getTimestamp().format(formatter)
+        );
+
         System.out.println("\n");
 
         // ------------------------------------------------------------
@@ -125,12 +235,14 @@ public class Main {
         System.out.println("Balance nach TopUp: " + client.getBalance());
 
         // View Balance
-        double currentBalance = balanceManager.getCurrentBalance(client);
-        System.out.println("Balance laut BalanceInquiryManager: " + currentBalance);
+        //double currentBalance = balanceManager.getCurrentBalance(client);
+        //System.out.println("Balance laut BalanceInquiryManager: " + currentBalance);
         System.out.println("\n");
 
         // ------------------------------------------------------------
         System.out.println("E8 – Charge - EV\n");
+        Charger ch100 = chargerManager.getChargerById(100);
+
 
         // Start Charging (ändert Status -> OCCUPIED)
         sessionManager.startCharging(ch100);
@@ -149,7 +261,10 @@ public class Main {
         Invoice invoice = invoiceManager.createInvoice(client, loc1, session.getEnergyKwh(), priceToUse);
 
         System.out.println("\nE9 – Invoice / History\n");
-        System.out.println("Invoice date:       " + invoice.getDate());
+
+
+
+        System.out.println("Invoice date:     " + invoice.getTimestamp().format(formatter));
         System.out.println("Invoice location:   " + invoice.getLocationName());
         System.out.println("Energy (kWh):       " + invoice.getEnergyKwh());
         System.out.println("Price per kWh:      " + invoice.getPricePerKwh());
