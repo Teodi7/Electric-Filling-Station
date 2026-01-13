@@ -1,9 +1,14 @@
-Feature: Client views current balance
-  As a client,
-  I want to view my current balance,
-  so that I know whether I have enough credit for a charging session.
+Feature: View client balance
+  Clients can view their current account balance.
 
-  Scenario: Client views current balance of an existing account
-    Given an existing client account with id 1 and balance 50.0
-    When the client checks their current balance
-    Then the system shows a balance of 50.0
+  Scenario: View current balance
+    Given a client with id 1, name "Omar Ftaiti", email "omar@example.com" exists
+    And the client with id 1 tops up the balance by 30.00 EUR
+    When the client requests the current balance
+    Then the balance should be 30.00 EUR
+
+    # edge case
+  Scenario: Requesting balance for a new client should return 0 EUR
+    Given a client with id 1, name "Omar", email "omar@example.com" exists
+    When the client requests the current balance
+    Then the balance should be 0.0 EUR

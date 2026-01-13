@@ -1,31 +1,29 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClientAccount {
 
-    // clientId ist auch die Account-ID
-    private int clientId;
+    private int id;
     private String name;
     private String email;
-    private double balance = 0.0;
+    private double balance;
 
-    // US5.1 – Create Client Account
-    public ClientAccount(int clientId, String name, String email) {
-        this.clientId = clientId;
+    private List<TopUp> topUpHistory = new ArrayList<>();
+    private List<Invoice> invoices = new ArrayList<>();
+
+    public ClientAccount(int id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
+        this.balance = 0.0;
     }
 
-
-    public int getClientId() {
-        return clientId;
+    public int getId() {
+        return id;
     }
-
-    public int getAccountId() {
-        return clientId;
-    }
-
-
 
     public String getName() {
         return name;
@@ -35,35 +33,32 @@ public class ClientAccount {
         return email;
     }
 
-    // US4.2 / US5.2 – Update Client Account
-    public void updateContactData(String newName, String newEmail) {
-        this.name = newName;
-        this.email = newEmail;
-    }
-
-    // Ganze Guthaben
-
     public double getBalance() {
         return balance;
     }
 
+    public void topUp(double amount) {
+        balance += amount;
+        topUpHistory.add(new TopUp(LocalDate.now(), amount));
+    }
+
+    public void charge(double amount) {
+        balance -= amount;
+    }
+
+    public List<TopUp> getTopUpHistory() {
+        return topUpHistory;
+    }
+
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public void addInvoice(Invoice invoice) {
+        invoices.add(invoice);
+    }
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    // US6.2 – Top-Up Balance
-    public void credit(double amount) {
-        balance += amount;
-    }
-
-    // US6.1 / US6.3 / US8.1 – Prüfung,
-    public boolean canPay(double amount) {
-        return balance >= amount;
-    }
-
-
-    public void debit(double amount) {
-        balance -= amount;
     }
 }

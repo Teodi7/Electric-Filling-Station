@@ -1,7 +1,7 @@
 package org.example;
 
 
- // Für die einzelne Rechnung
+// Für die einzelne Rechnung
 
 
 public class InvoiceItem {

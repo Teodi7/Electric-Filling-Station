@@ -1,14 +1,22 @@
-Feature: Charge EV
-  In order to charge my EV and pay correctly
-  As a client
-  I want the cost to depend on charger type, energy and charging duration
+Feature: Charge electric vehicle
+  A client charges an electric vehicle using a charger.
 
-  Scenario: Client charges EV on AC charger and pays from account
-    Given a client account with id 1, name "Omar Ftaaiti" and email "omar@example.com" and balance 50.0
-    And a location with id 1, name "FH-Technikum", address "Höchstädtplatz 6" and status "AVAILABLE"
-    And a charger with id 100, type "AC" and status "AVAILABLE" at that location
-    And a price for this location and charger type "AC" with price per kwh 0.25 and price per minute 0.10
-    When the client starts a charging session on charger with id 100
-    And the client charges 20.0 kwh for 60 minutes
-    Then the total charging cost should be 11.0
-    And the client account balance should be 39.0
+  Scenario: Client charges vehicle
+    Given a location with name "FH-Technikum" exists
+    And a charger with id 200 of type AC exists at "FH-Technikum"
+    And a price for AC chargers at "FH-Technikum" is set to 0.30 EUR per kWh
+    And a client with id 1, name "Omar Ftaiti", email "omar@example.com" exists
+    And the client with id 1 tops up the balance by 50.00 EUR
+    When the client charges 20.0 kWh at "FH-Technikum" using charger 200
+    Then the client balance should be 44.00 EUR
+
+
+        # edge case
+  Scenario: Charging with a charger that is out of service should not create an invoice
+    Given a location with name "FH-Technikum" exists
+    And a charger with id 300 of type AC exists at "FH-Technikum"
+    And a price for AC chargers at "FH-Technikum" is set to 0.30 EUR per kWh
+    And a client with id 1, name "Omar", email "omar@example.com" exists
+    And the charger with id 300 is out of service
+    When the client charges 10.0 kWh at "FH-Technikum" using charger 300
+    Then no invoice should exist

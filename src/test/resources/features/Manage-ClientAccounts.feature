@@ -1,21 +1,27 @@
 Feature: Manage client accounts
-  In order to keep track of customers
-  As the owner
-  I want to view all client accounts
+  The owner can view and manage registered client accounts.
+  Each client account contains a name, an email address and a balance.
 
-  Scenario: Owner views all client accounts
-    Given there is a client with id 1, name "Teodi Gregorian" and email "teodi@example.com" and an active account with balance 0.0
-    And there is a client with id 2, name "Omar" and email "omar@example.com" and an active account with balance 10.0
-    When the owner requests the list of client accounts
-    Then the system should return 2 client accounts
+  Scenario: View all client accounts
+    Given the following clients exist:
+      | id | name           | email                    |
+      | 1  | Omar Ftaiti    | omar@example.com          |
+      | 2  | Teodi Gregorian| teodi@example.com         |
+      | 3  | Lukas Steiner  | lukas@example.com        |
+    When the owner requests all client accounts
+    Then the system should return 3 client accounts
 
-  Scenario: Owner updates a client account
-    Given there is a client with id 1, name "Teodi Gregorian" and email "teodi@example.com" and an active account with balance 0.0
-    When the owner updates the client account with id 1 to name "Teo Greg" and email "teo.greg@example.com"
-    Then the system should show a client account with id 1, name "Teo Greg" and email "teo.greg@example.com"
+  Scenario: Delete a client account
+    Given a client with id 1, name "Omar Ftaiti", email "omar@example.com" exists
+    When the owner deletes the client account with id 1
+    Then the system should not contain a client account with id 1
 
-  Scenario: Owner deletes a client account
-    Given there is a client with id 1, name "Teodi Gregorian" and email "teodi@example.com" and an active account with balance 0.0
-    And there is a client with id 2, name "Omar" and email "omar@example.com" and an active account with balance 10.0
-    When the owner deletes the client account with id 2
-    Then the system should not contain a client account with id 2
+    # edge case
+  Scenario: Deleting a non-existing client account should not change the system
+    Given the following clients exist:
+      | id | name | email |
+      | 1  | Omar | omar@example.com |
+    When the owner deletes the client account with id 999
+    And the owner requests all client accounts
+    Then the system should return 1 client accounts
+    And the system should not contain a client account with id 999

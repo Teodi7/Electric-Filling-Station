@@ -3,52 +3,68 @@ package org.example;
 import io.cucumber.java.en.*;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ManageChargingPointsSteps {
 
-    private LocationManager locationManager = new LocationManager();
-    private ChargerManager chargerManager = new ChargerManager();
+    private List<Charger> lastResult;
 
-    private List<Charger> lastResultChargers = new ArrayList<>();
+    @When("the owner adds a charger with id {int} of type AC to location {string}")
+    public void the_owner_adds_a_charger_with_id_of_type_ac_to_location(Integer id, String locationName) {
+        Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
 
+        // Edge case: Location existiert nicht -> nichts machen (System bleibt unverändert)
+        if (location == null) {
+            return;
+        }
 
-
-    @Given("there is a location with id {int}, name {string}, address {string} and status {string}")
-    public void there_is_a_location_with_id_name_address_status(
-            Integer id, String name, String address, String status) {
-
-        locationManager.createLocation(id, name, address, status);
+        Charger charger = new Charger(id, ChargerType.AC, ChargerStatus.AVAILABLE, location);
+        LocationSteps.getNetwork().getChargerManager().addCharger(charger);
     }
 
 
 
-    @When("the owner creates a charger with id {int}, type {string} and status {string} for location with id {int}")
-    public void owner_creates_charger_for_location(
-            Integer chargerId, String type, String status, Integer locationId) {
+    @When("the owner adds a charger with id {int} of type DC to location {string}")
+    public void the_owner_adds_a_charger_with_id_of_type_dc_to_location(Integer id, String locationName) {
+        Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
 
-        Location loc = locationManager.findLocationById(locationId);
-        Assertions.assertNotNull(loc, "Location not found for id " + locationId);
+        // Edge case: Location existiert nicht -> nichts machen (System bleibt unverändert)
+        if (location == null) {
+            return;
+        }
 
-        ChargerType chargerType = ChargerType.valueOf(type);
-        ChargerStatus chargerStatus = ChargerStatus.valueOf(status);
-
-        chargerManager.createCharger(chargerId, chargerType, chargerStatus, 22.0, loc);
+        Charger charger = new Charger(id, ChargerType.DC, ChargerStatus.AVAILABLE, location);
+        LocationSteps.getNetwork().getChargerManager().addCharger(charger);
     }
 
 
-
-    @Then("the system should show {int} charger for location with id {int}")
-    public void system_should_show_charger_count(Integer expectedCount, Integer locationId) {
-
-        Location loc = locationManager.findLocationById(locationId);
-        Assertions.assertNotNull(loc, "Location not found for id " + locationId);
-
-        List<Charger> chargers = chargerManager.getChargersByLocation(loc);
-        Assertions.assertEquals(expectedCount.intValue(), chargers.size());
+    @Then("the location {string} should have {int} chargers")
+    public void the_location_should_have_chargers(String locationName, Integer count) {
+        Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
+        Assertions.assertNotNull(location);
+        Assertions.assertEquals(count, location.getChargers().size());
     }
 
+    @Given("the location {string} has a charger with id {int} of type AC")
+    public void the_location_has_a_charger_with_id_of_type_ac(String locationName, Integer id) {
+        Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
+        Assertions.assertNotNull(location);
 
+        Charger charger = new Charger(id, ChargerType.AC, ChargerStatus.AVAILABLE, location);
+        LocationSteps.getNetwork().getChargerManager().addCharger(charger);
+    }
 
+    @When("the owner requests all chargers for location {string}")
+    public void the_owner_requests_all_chargers_for_location(String locationName) {
+        Location location = LocationSteps.getNetwork().getLocationManager().getLocationByName(locationName);
+        Assertions.assertNotNull(location);
+
+        lastResult = LocationSteps.getNetwork().getChargerManager().getChargersByLocation(location);
+    }
+
+    @Then("the system should return {int} charger")
+    public void the_system_should_return_charger(Integer expected) {
+        Assertions.assertNotNull(lastResult);
+        Assertions.assertEquals(expected, lastResult.size());
+    }
 }
